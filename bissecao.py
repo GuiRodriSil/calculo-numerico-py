@@ -1,10 +1,9 @@
-# Função que define a equação a ser resolvida
-def f(i):
-    P = 35000  # Valor do veículo
-    A = 8500   # Pagamento anual
-    n = 7      # Número de anos
-   
-    return P * (i * (1 + i)**n) / ((1 + i)**n - 1) - A
+import numpy as np
+# np.sqrt(a) Raiz quadrada np.sin(a) Seno np.cos(a) Cosseno
+
+# Função f(x) (x) o que eu quero encontrar 
+def f(x):
+    return x**3 - x - 2  # Altere essa função para a equação
 
 # Implementação do método da bissecção
 def bisseccao(a, b, tolerancia, max_iteracoes):
@@ -32,12 +31,12 @@ def bisseccao(a, b, tolerancia, max_iteracoes):
     return (a + b) / 2.0  # Aproximação da raiz
 
 # Parâmetros do método
-a = 0.01  # Limite inferior do intervalo 
-b = 0.2   # Limite superior do intervalo 
-tolerancia = 1e-5  # Critério de parada
+a = 1  # Início do intervalo
+b = 2  # Fim do intervalo
+tolerancia = 1e-6  # Critério de parada
 max_iteracoes = 100  # Número máximo de iterações
 
 # Chamando o método
-taxa_juros = bisseccao(a, b, tolerancia, max_iteracoes)
-if taxa_juros is not None:
-    print(f"A taxa de juros aproximada é: {taxa_juros * 100:.4f}% ao ano")
+raiz = bisseccao(a, b, tolerancia, max_iteracoes)
+if raiz is not None:
+    print(f"A raiz aproximada é: {raiz}")
